@@ -27,6 +27,8 @@ class _EditInvoiceBottomSheetState extends State<EditInvoiceBottomSheet> {
   void initState() {
     super.initState();
     _selectedStatus = widget.initialRadioValue;
+    _nameController.text = widget.invoice.custmerName;
+    _paymentController.text = widget.invoice.paymentAmount.toString();
   }
 
   @override

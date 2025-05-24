@@ -25,7 +25,6 @@ class _InvoiceDetailsScreenState extends State<InvoiceDetailsScreen> {
         invoice: widget.invoice,
       ),
     );
-
     if (result != null) {
       setState(() {
         widget.invoice.setName(result['name']);
@@ -34,17 +33,14 @@ class _InvoiceDetailsScreenState extends State<InvoiceDetailsScreen> {
         widget.invoice.setStatus(result['status']);
         widget.invoice.setPaymetDate(result['paymentDate']);
       });
-      log("User Input: $result"); // You can handle the result here
+      log("User Input: $result");
+      // You can handle the result here
+      Navigator.of(context).pop(widget.invoice);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    log(widget.invoice.custmerName);
-    log(widget.invoice.paymentAmount.toString());
-    log(widget.invoice.paymentMethod.toString());
-    log(widget.invoice.status.toString());
-    log(widget.invoice.dateOfPayment.toString());
     String formattedInvoiceDate =
         '${widget.invoice.dateOfInvoice.day}/${widget.invoice.dateOfInvoice.month}/${widget.invoice.dateOfInvoice.year}';
     String? formattedPaymentDate = widget.invoice.dateOfPayment != null

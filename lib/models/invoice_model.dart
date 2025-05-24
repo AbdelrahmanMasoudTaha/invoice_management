@@ -28,46 +28,7 @@ class InvoiceModel {
 }
 
 List<InvoiceModel> invoices = [
-  InvoiceModel(
-    paymentAmount: 2000,
-    paymentMethod: 'cash',
-    status: 0,
-    custmerName: 'Ahmed Masoud ',
-    dateOfInvoice: DateTime.now(),
-    dateOfPayment: DateTime.now(),
-  ),
-  InvoiceModel(
-    paymentAmount: 3000,
-    paymentMethod: 'cash',
-    status: 1,
-    custmerName: 'Adam Mohamed',
-    dateOfInvoice: DateTime.now(),
-    dateOfPayment: DateTime.now(),
-  ),
-  InvoiceModel(
-    paymentAmount: 4000,
-    paymentMethod: 'cash',
-    status: 1,
-    custmerName: 'Usama Saad',
-    dateOfInvoice: DateTime.now(),
-    dateOfPayment: DateTime.now(),
-  ),
-  InvoiceModel(
-    paymentAmount: 2000,
-    paymentMethod: 'cash',
-    status: 0,
-    custmerName: 'Ahmed Masoud ',
-    dateOfInvoice: DateTime.now(),
-    dateOfPayment: DateTime.now(),
-  ),
-  InvoiceModel(
-    paymentAmount: 3000,
-    paymentMethod: 'cash',
-    status: 1,
-    custmerName: 'Adam Mohamed',
-    dateOfInvoice: DateTime.now(),
-    dateOfPayment: DateTime.now(),
-  ),
+
   InvoiceModel(
     paymentAmount: 4000,
     paymentMethod: 'cash',

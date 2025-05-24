@@ -50,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
               if (newInvoce != null) {
                 setState(() {
                   invoices.add(newInvoce);
+                  filterItems(searchController.text);
                 });
               }
             },
@@ -91,12 +92,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   final InvoiceModel invoice = filteredItems[index];
                   return GestureDetector(
                     child: InvoiceCard(invoice: invoice),
-                    onTap: () {
-                      Navigator.of(context).push(
+                    onTap: () async {
+                      final updatedInvoice = await Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) {
                           return InvoiceDetailsScreen(invoice: invoice);
                         }),
                       );
+                      if (updatedInvoice != null) {
+                        setState(() {
+                          // Find and update the invoice in the main list
+                          final index = invoices
+                              .indexWhere((inv) => inv.id == updatedInvoice.id);
+                          if (index != -1) {
+                            invoices[index] = updatedInvoice;
+                            // Update filtered items to reflect the changes
+                            filterItems(searchController.text);
+                          }
+                        });
+                      }
                     },
                   );
                 },
